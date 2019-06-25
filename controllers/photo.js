@@ -9,7 +9,10 @@ const handlePhoto = () => (req, res) => {
     fetch(url)
     .then(data => data.json())
     .then(data => {
-        res.json(data);
+        photos = data.photos.map(photo => {
+            return photo['img_src'];
+        });
+        res.json(photos);
     })
     .catch(err => res.status(400).json('api call failed'));
 }

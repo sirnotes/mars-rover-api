@@ -16,7 +16,7 @@ server.use(morgan('combined'));
 server.use(compression());
 
 server.get('/', index.handleIndex())
-server.put('/photo', photo.handlePhoto());
+server.post('/photos', photo.handlePhoto());
 
 server.listen(process.env.PORT || 3000, () => {
     console.log(`Server is running on port ${process.env.PORT || 3000}`);

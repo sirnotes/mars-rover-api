@@ -11,7 +11,9 @@ const photo = require('./controllers/photo');
 const server = express();
 
 server.use(bodyParser.json());
-server.use(cors());
+server.use(cors({
+    origin: 'https://sirnotes.github.io'
+}));
 server.use(morgan('combined'));
 server.use(compression());
 

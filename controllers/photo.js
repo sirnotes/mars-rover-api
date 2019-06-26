@@ -10,7 +10,7 @@ const handlePhoto = () => (req, res) => {
     .then(data => data.json())
     .then(data => {
         photos = data.photos.map(photo => {
-            return photo['img_src'];
+            return photo['img_src'].replace(/^http:\/\//i, 'https://');
         });
         res.json(photos);
     })

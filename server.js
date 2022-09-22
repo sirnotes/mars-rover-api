@@ -14,7 +14,7 @@ const server = express();
 
 server.use(bodyParser.json());
 server.use(cors({
-    origin: ['https://kennithnichol.github.io','http://localhost:3001']
+    origin: ['https://sirnotes.github.io','http://localhost:3001']
 }));
 server.use(morgan('combined'));
 server.use(compression());
